@@ -41,6 +41,11 @@ uv init
 uv python pin 3.12
 
 
+# PyTorch 전용 인덱스 추가
+uv add --index https://download.pytorch.org/whl/cu124 torch torchvision torchaudio
+
+
+
 uv add torch torchvision torchaudio --index https://download.pytorch.org/whl/cu124
 
 
