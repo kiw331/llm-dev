@@ -1,7 +1,7 @@
 [project]
-name = "torch-ubuntu"
+name = "uvtest"
 version = "0.1.0"
-description = "PyTorch on Ubuntu 24.04 with CUDA 13.1"
+description = "PyTorch Blackwell Support"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
@@ -11,11 +11,11 @@ dependencies = [
 ]
 
 [[tool.uv.index]]
-name = "pytorch-cu124"
-url = "https://download.pytorch.org/whl/cu124"
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
 explicit = true
 
 [tool.uv.sources]
-torch = { index = "pytorch-cu124" }
-torchvision = { index = "pytorch-cu124" }
-torchaudio = { index = "pytorch-cu124" }
+torch = { index = "pytorch-cu128" }
+torchvision = { index = "pytorch-cu128" }
+torchaudio = { index = "pytorch-cu128" }
