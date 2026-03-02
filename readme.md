@@ -1,6 +1,19 @@
+env
+```
+CPU: AMD 9965WX 시마다 피크 CPU PRO
+메인보드: ASUS PRO WS WRX90E-SAGE SE 
+GPU : NVIDIA RTX PRO 6000 Blackwell MAX-Q (96GB), 2EA
+OS: Ubuntu 24.04.3 LTS
+
+```
+
+
+```
+
 echo 'export PATH=/usr/local/cuda-12.8/bin${PATH:+:${PATH}}' >> ~/.bashrc
 echo 'export LD_LIBRARY_PATH=/usr/local/cuda-12.8/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}' >> ~/.bashrc
 source ~/.bashrc
+```
 
 ```
 export PATH=/usr/local/cuda-12.8/bin:$PATH
