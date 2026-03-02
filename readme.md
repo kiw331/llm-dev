@@ -74,3 +74,37 @@ for i in range(torch.cuda.device_count()):
 ```
 
 
+```
+-- ssh_monitor.conf
+-- SSH 서버 상태 및 GPU/CPU 정보를 바탕화면에 표시하는 위젯 설정
+
+conky.config = {
+    alignment = 'top_right',
+    background = true,
+    border_width = 1,
+    cpu_avg_samples = 2,
+    default_color = 'white',
+    double_buffer = true,
+    font = 'DejaVu Sans Mono:size=10',
+    gap_x = 60,
+    gap_y = 60,
+    minimum_width = 300,
+    own_window = true,
+    own_window_type = 'desktop',
+    own_window_transparent = true,
+    update_interval = 2.0,
+}
+
+conky.text = [[
+${color orange}SYSTEM ${hr 2}
+${color white}Hostname: $nodename
+${color white}Uptime: $uptime
+${color white}SSH Service: ${if_match "${exec systemctl is-active ssh}" == "active"}${color green}RUNNING${else}${color red}STOPPED${endif}
+
+${color orange}GPU BLACKWELL ${hr 2}
+${color white}GPU 1: ${exec nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits -i 0}% | ${exec nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits -i 0}°C
+${color white}GPU 2: ${exec nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits -i 1}% | ${exec nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits -i 1}°C
+]]
+
+```
+
